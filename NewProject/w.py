@@ -4,7 +4,7 @@ f = open("text.txt", "r")
 file = f.readlines()
 f.close()
 
-list = ['!','?','"',',','.',':',';','(',')','\n']
+list = ['!','?','"',',','.',':',';','(',')','\n',' ']
 vocab = []
 occurances = {}
 
@@ -23,22 +23,35 @@ for line in file:
 
 sentence = ""
 sBreakers = ['.','?','!']
-midSentence = ['"',','(',')']
-sentences = [[],[],[]]
+midSentence = ['"',',','(',')']
+letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+sentences = []
 
 for line in file:
 	sentence += line
 
+sentence = sentence.lower()
+sentence = sentence.replace('\n','')
+for char in sentence:
+	if char not in letters:
+		if char not in list:
+			sentence = sentence.replace(char, '')
 
+for char in midSentence:
+	sentence = sentence.replace(char, '')
+
+sentences = sentence.split('.')
+for i in sentences:
+	i = i.split('?')
+for j in i in sentences:
 for char in sBreakers:
-	sentence.split(char)
-
-print sentence
-	
-
+	sentences = sentence.split(char)
+	for i in sentences:
+		for char in sBreakers:
+			i = i.split(char)
+print sentences
 str = ""
 for i in range(10):
 	x = random.randint(0,len(vocab)-1)
 	str += vocab[x]+" "
-
 
