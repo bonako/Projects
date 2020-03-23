@@ -1,9 +1,10 @@
-import random
+import random, re
 
 f = open("text.txt", "r")
 file = f.readlines()
 f.close()
 
+letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 list = ['!','?','"',',','.',':',';','(',')','\n',' ']
 vocab = []
 occurances = {}
@@ -11,8 +12,9 @@ occurances = {}
 for line in file:
 	words = line.split(' ')
 	for word in words:
-		for char in list:
-			word = word.replace(char, '')
+		for char in word:
+			if char not in letters and char not in list:
+				word = word.replace(char, '')
 		word = word.lower()
 		if word not in occurances.keys():
 			occurances[word] = 0
@@ -22,34 +24,32 @@ for line in file:
 
 
 sentence = ""
-sBreakers = ['.','?','!']
-midSentence = ['"',',','(',')']
-letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+endofsentence = ['.','?','!']
+insentence = ['"',',','(',')','\n',':',';']
 sentences = []
 
 for line in file:
 	sentence += line
 
 sentence = sentence.lower()
-sentence = sentence.replace('\n','')
-for char in sentence:
-	if char not in letters:
-		if char not in list:
-			sentence = sentence.replace(char, '')
 
-for char in midSentence:
+for char in sentence:
+	if char not in letters and char not in list:
+		sentence = sentence.replace(char, '')
+for char in insentence:
 	sentence = sentence.replace(char, '')
 
-sentences = sentence.split('.')
-for i in sentences:
-	i = i.split('?')
-for j in i in sentences:
-for char in sBreakers:
-	sentences = sentence.split(char)
-	for i in sentences:
-		for char in sBreakers:
-			i = i.split(char)
-print sentences
+sentences = re.split('[.?!]',sentence)
+
+sendigits = []
+for sentence in sentences:
+	if sentence == '':
+		sentences.remove(sentence)
+	for word in sentence.split(' '):
+		vocab.index(word)
+	if char not in letters and char not in list:
+		word = word.replace(char, '')
+
 str = ""
 for i in range(10):
 	x = random.randint(0,len(vocab)-1)
