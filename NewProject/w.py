@@ -12,15 +12,26 @@ occurances = {}
 for line in file:
 	words = line.split(' ')
 	for word in words:
+		word = word.lower()
 		for char in word:
 			if char not in letters and char not in list:
 				word = word.replace(char, '')
-		word = word.lower()
+			for punctuation in list:
+				if char == punctuation:
+					word = word.replace(char, '')
+			if char not in letters:
+				word = word.replace(char, '')
+					
 		if word not in occurances.keys():
 			occurances[word] = 0
-		if word not in vocab:
+		if word not in vocab and word != '':
 			vocab.append(word)
 		occurances[word] = occurances[word] + 1
+
+dictionary = {}
+
+for word in vocab:
+	dictionary[vocab.index(word)] = word
 
 
 sentence = ""
@@ -41,14 +52,19 @@ for char in insentence:
 
 sentences = re.split('[.?!]',sentence)
 
-sendigits = []
+sentenceNumbers = []
 for sentence in sentences:
-	if sentence == '':
+	numbers = []
+	if sentence == '' or sentence == ' ':
 		sentences.remove(sentence)
 	for word in sentence.split(' '):
-		vocab.index(word)
+		if word in vocab:
+			numbers.append(vocab.index(word))	
 	if char not in letters and char not in list:
 		word = word.replace(char, '')
+	if numbers != []:
+		sentenceNumbers.append(numbers)
+
 
 str = ""
 for i in range(10):
