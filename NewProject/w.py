@@ -66,8 +66,32 @@ for sentence in sentences:
 		sentenceNumbers.append(numbers)
 
 
-str = ""
-for i in range(10):
-	x = random.randint(0,len(vocab)-1)
-	str += vocab[x]+" "
+outputSentences = []
+sentence = []
+for sentenceLength in range(10):
+	word = random.randint(0,len(vocab)-1)
+	sentence.append(word)
 
+
+similarityArray = []
+for numbers in sentenceNumbers:
+	n = 0
+	w = 0
+	similarity = 0
+	count = 0
+	checkLength = min(len(numbers),len(sentence))
+	while count < checkLength:
+		if sentence[w] == numbers[n]:
+			similarity += 0.1
+			n+=1
+		else:
+			n+=1
+		count+=1
+	similarityArray.append(similarity)
+
+str = ""
+for number in sentence:
+	str += dictionary[number] + " "
+print str
+print sentences
+print similarityArray
