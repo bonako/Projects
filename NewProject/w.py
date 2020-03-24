@@ -1,6 +1,6 @@
 import random, re
 
-f = open("emperorsnewclothes.txt", "r")
+f = open("7oldsamurai.txt", "r")
 file = f.readlines()
 f.close()
 
