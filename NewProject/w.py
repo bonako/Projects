@@ -71,27 +71,39 @@ sentence = []
 for sentenceLength in range(10):
 	word = random.randint(0,len(vocab)-1)
 	sentence.append(word)
-
+firstSentence = ""
+for word in sentence:
+	firstSentence += dictionary[word] + " "
 
 similarityArray = []
 for numbers in sentenceNumbers:
-	n = 0
-	w = 0
 	similarity = 0
-	count = 0
-	checkLength = min(len(numbers),len(sentence))
-	while count < checkLength:
-		if sentence[w] == numbers[n]:
-			similarity += 0.1
-			n+=1
-		else:
-			n+=1
-		count+=1
+	n = 0
+	while n < len(numbers):
+		s = 0
+		while s < len(sentence):
+			if numbers[n] == sentence[s]:
+				similarity += 0.1
+			s+=1
+		n+=1
 	similarityArray.append(similarity)
 
-str = ""
-for number in sentence:
-	str += dictionary[number] + " "
-print str
-print sentences
-print similarityArray
+
+mostSimilarSentences = [] #in increasing order
+maxSimilarity = 0
+for similarity in similarityArray:
+	if similarity > maxSimilarity:
+		maxSimilarity = similarity
+		mostSimilarSentences.append(similarityArray.index(maxSimilarity))
+
+for sentence in mostSimilarSentences:	
+	numbers = sentenceNumbers[sentence]
+	str = ""
+	for number in numbers:
+		str += dictionary[number] + " "
+	outputSentences.append(str)
+
+print firstSentence
+
+for sentence in outputSentences:
+	print sentence
