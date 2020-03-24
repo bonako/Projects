@@ -1,6 +1,6 @@
 import random, re
 
-f = open("text.txt", "r")
+f = open("emperorsnewclothes.txt", "r")
 file = f.readlines()
 f.close()
 
@@ -103,7 +103,6 @@ for sentence in mostSimilarSentences:
 		str += dictionary[number] + " "
 	outputSentences.append(str)
 
-print firstSentence
-
+#print firstSentence
 for sentence in outputSentences:
 	print sentence
