@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Registration Form</title>
+</head>
+
+<body>
+  <form action="" method="POST" id="registrationForm">
+    <h1>Registion</h1>
+    <fieldset>
+      <!-- Section 1 -->
+      <legend><span class="section">1</span>Register</legend>
+
+      <label class="" for="email">Email:</label>
+      <input type="email" name="email" value="" id="email" placeholder="example@example.com" required />
+
+      <label class="" for="password">Password:</label>
+      <input type="password" name="password" value="" id="password" placeholder="********" required />
+
+    </fieldset>
+
+    <div class="alert">Registration successful</div>
+
+    <button type="submit" sendMessage()>Register</button>
+    <button type="button" onclick="openLogin()">Login</button>
+
+
+  </form>
+  <script>
+
+  function openLogin() {
+    window.open("userlogin.html", "_self");
+    // window.open("form2.html",'popUpWindow', 'height=500,width=500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');
+  }
+
+  </script>
+
+  <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+  <script src="register.js"></script>
+
+</body>
+
+</html>

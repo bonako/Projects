@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Registration Form</title>
+</head>
+
+<body>
+  <form action="" method="POST" id="registrationform">
+    <h1>Register</h1>
+    <fieldset>
+      <!-- Section 1 -->
+      <legend><span class="section">1</span>Your Basic Info</legend>
+      <!--<label class="" for="name">Name:</label>
+      <input type="text" name="name" value="" id="name" placeholder="Du Detson" />
+
+      <label class="" for="email">Email:</label>
+      <input type="email" name="email" value="" id="email" placeholder="example@example.com" />
+-->
+      <label class="" for="phone">Phone number:*</label>
+      <input type="tel" name="phone" value="" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="###-###-####" required />
+
+    </fieldset>
+
+    <fieldset>
+      <!-- section 2 -->
+      <legend><span class="section">2</span>Parking</legend>
+<!--
+      <label class="" for="det">Details:</label>
+      <textarea name="det" id="det" placeholder="Details"></textarea>
+-->
+      <label class="" for="cost">Parking cost for 1 hr:</label>
+      <input type="number" name="cost" value="" id="cost" placeholder="$0" />
+<!--
+      <label class="" for="spots">Number of parking spots:</label>
+      <select name="spots" value="" id="spots"  />
+        <option value="1" id="1">1</option>
+        <option value="2" id="2">2</option>
+        <option value="3+" id="3+">3+</option>
+      </select>
+
+      <label>Allowed vehicles:</label>
+      <div>
+        <input type="checkbox" id="bi" name="vehicles" value="bicycles">
+        <label for="bi">Bicycles</label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="mc" name="vehicles" value="motorcycles">
+        <label for="mc">Motorcycles</label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="ca" name="vehicles" value="cars">
+        <label for="ca">Cars</label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="pt" name="vehicles" value="pickup trucks">
+        <label for="pt">Pickup trucks</label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="tr" name="vehicles" value="trucks">
+        <label for="tr">Commercial trucks</label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="bo" name="vehicles" value="boats">
+        <label for="bo">Boats</label>
+      </div>
+    -->
+      <div class="alert">Parking Added</div>
+
+      <button type="submit" sendMessage()>Register</button>
+
+  </form>
+
+  <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
