@@ -13,4 +13,7 @@ Dungeons and Dragons
   - Java text-based game
 
 NewProject
-  - Machine learning story maker
+  - Machine learning story maker (in progress)
+
+Upcoming projects:
+  - 3D Unit FPS game
