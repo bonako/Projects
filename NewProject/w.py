@@ -1,14 +1,19 @@
 import random, re
 
-f = open("7oldsamurai.txt", "r")
+f = open("emperorsnewclothes.txt", "r")
 file = f.readlines()
 f.close()
 
+v = open("vocab.txt", "r")
+vocab = (v.read().split(" "))
+v.close()
+
 letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 list = ['!','?','"',',','.',':',';','(',')','\n',' ']
-vocab = []
 occurances = {}
 
+sentence = []
+v = open("vocab.txt","a")
 for line in file:
 	words = line.split(' ')
 	for word in words:
@@ -24,16 +29,29 @@ for line in file:
 					
 		if word not in occurances.keys():
 			occurances[word] = 0
+		sentence.append(word)
 		if word not in vocab and word != '':
 			vocab.append(word)
+			v.write(word+" ")
 		occurances[word] = occurances[word] + 1
 
+v.close()
+numbers = []
 dictionary = {}
-
 for word in vocab:
-	dictionary[vocab.index(word)] = word
+	if word != '':
+		dictionary[vocab.index(word)] = word
+for word in sentence:
+	for key, value in dictionary.items():
+		if (word == value):
+			numbers.append(key)
 
+d = open("dictionary.txt","a")
+for key, value in dictionary.items():
+	d.write(str(key)+": "+ value+"\n")
+d.close()
 
+print numbers
 sentence = ""
 endofsentence = ['.','?','!']
 insentence = ['"',',','(',')','\n',':',';']
@@ -43,7 +61,6 @@ for line in file:
 	sentence += line
 
 sentence = sentence.lower()
-
 for char in sentence:
 	if char not in letters and char not in list:
 		sentence = sentence.replace(char, '')
@@ -51,7 +68,6 @@ for char in insentence:
 	sentence = sentence.replace(char, '')
 
 sentences = re.split('[.?!]',sentence)
-
 sentenceNumbers = []
 for sentence in sentences:
 	numbers = []
@@ -99,10 +115,8 @@ for similarity in similarityArray:
 for sentence in mostSimilarSentences:	
 	numbers = sentenceNumbers[sentence]
 	str = ""
-	for number in numbers:
-		str += dictionary[number] + " "
-	outputSentences.append(str)
+#	for number in numbers:
+#		str += dictionary[number] + " "
+#	outputSentences.append(str)
 
-#print firstSentence
-for sentence in outputSentences:
-	print sentence
+#print sentenceNumbers
