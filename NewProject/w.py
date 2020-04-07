@@ -106,17 +106,19 @@ while (running):
 		if (outputStory[index]==stories.split(" ")[base]):
 			similarity += (1/len(outputStory))
 			index += 1
-			base += index
+			base += 1
 		else:
 			similarity=0
-			index=0
+			index+=1
+		print index
+		print base
 		if index==(len(outputStory)-1) or base==(len(stories.split(" "))-1):
 			running = False
 print similarity
 
-s.open("generated.txt","w")
+s = open("generated.txt","w")
 for number in outputStory:
-	s.write(str(number)+" ")
+	s.write(dictionary[number]+" ")
 s.close()
 
 
