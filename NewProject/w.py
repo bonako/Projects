@@ -1,6 +1,7 @@
 import random, re
 
-f = open("emperorsnewclothes.txt", "r")
+name = raw_input("Name of story: ")
+f = open(name+".txt", "r")
 file = f.readlines()
 f.close()
 
@@ -51,7 +52,18 @@ for key, value in dictionary.items():
 	d.write(str(key)+": "+ value+"\n")
 d.close()
 
-print numbers
+o = open(name+"-numbers.txt","w")
+s = open("stories.txt","a")
+for number in numbers:
+	o.write(str(number)+" ")
+	s.write(str(number)+" ")
+o.close()
+s.close()
+
+s = open("stories.txt","r")
+stories = s.read()
+s.close()
+
 sentence = ""
 endofsentence = ['.','?','!']
 insentence = ['"',',','(',')','\n',':',';']
@@ -80,6 +92,33 @@ for sentence in sentences:
 		word = word.replace(char, '')
 	if numbers != []:
 		sentenceNumbers.append(numbers)
+
+
+outputStory = []
+for length in range(100):
+	outputStory.append(random.randint(0,len(dictionary)))
+
+similarity = 0
+index = 0
+base = 0
+running = True
+while (running):
+		if (outputStory[index]==stories.split(" ")[base]):
+			similarity += (1/len(outputStory))
+			index += 1
+			base += index
+		else:
+			similarity=0
+			index=0
+		if index==(len(outputStory)-1) or base==(len(stories.split(" "))-1):
+			running = False
+print similarity
+
+s.open("generated.txt","w")
+for number in outputStory:
+	s.write(str(number)+" ")
+s.close()
+
 
 
 outputSentences = []
