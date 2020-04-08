@@ -95,26 +95,31 @@ for sentence in sentences:
 
 
 outputStory = []
+prev = 0
 for length in range(100):
-	outputStory.append(random.randint(0,len(dictionary)))
-
+	this = random.randint(0,len(dictionary))
+	while (abs(this-prev)>10):
+		this = random.randint(0,len(dictionary))
+	prev = this
+	outputStory.append(this)
+	
 similarity = 0
 index = 0
 base = 0
 running = True
-while (running):
-		if (outputStory[index]==stories.split(" ")[base]):
-			similarity += (1/len(outputStory))
-			index += 1
-			base += 1
-		else:
-			similarity=0
-			index+=1
-		print index
-		print base
-		if index==(len(outputStory)-1) or base==(len(stories.split(" "))-1):
-			running = False
-print similarity
+#while (running):
+#		if (outputStory[index]==stories.split(" ")[base]):
+#			similarity += (1/len(outputStory))
+#			index += 1
+#			base += 1
+#		else:
+#			similarity=0
+#			index+=1
+#		print index
+#		print base
+#		if index==(len(outputStory)-1) or base==(len(stories.split(" "))-1):
+#			running = False
+
 
 s = open("generated.txt","w")
 for number in outputStory:
