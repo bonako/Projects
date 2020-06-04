@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <title>Registration Form</title>
+</head>
+
+<nav class="navbar nav-pills fixed-top navbar-expand-sm bg-dark navbar-dark">
+  <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="map.html">Map</a>
+      </li>
+    </ul>
+  </div>  
+</nav>
+
+<body>
+  <div class="container">
+  <form class="form" action="" method="POST" id="registrationform">
+    <h1>Register</h1>
+    <fieldset>
+      <!-- Section 1 -->
+      <!--<label class="" for="name">Name:</label>
+      <input type="text" name="name" value="" id="name" placeholder="Du Detson" />
+
+      <label class="" for="email">Email:</label>
+      <input type="email" name="email" value="" id="email" placeholder="example@example.com" />
+-->
+      <label class="form-control" style="background-color: green; color:white;" for="phone">Phone number:*</label>
+      <input class="form-control" type="tel" name="phone" value="" id="phone" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" placeholder="##########" required />
+
+            <label class="form-control" style="background-color: green; color:white;" for="phone">Latitude:*</label>
+      <input class="form-control" type="text" name="lat" value="" id="lat" placeholder="latitude" required />
+
+            <label class="form-control" style="background-color: green; color:white;" for="phone">Longitude:*</label>
+      <input class="form-control" type="text" name="lng" value="" id="lng" placeholder="longitude" required />
+
+    </fieldset>
+
+    <fieldset>
+      <!-- section 2 -->
+<!--
+      <label class="" for="det">Details:</label>
+      <textarea name="det" id="det" placeholder="Details"></textarea>
+-->
+      <label class="form-control" style="background-color: green; color: white;" for="cost">Parking cost for 1 hr:</label>
+      <input class="form-control" type="number" name="cost" value="" id="cost" placeholder="$10" />
+<!--
+      <label class="" for="spots">Number of parking spots:</label>
+      <select name="spots" value="" id="spots"  />
+        <option value="1" id="1">1</option>
+        <option value="2" id="2">2</option>
+        <option value="3+" id="3+">3+</option>
+      </select>
+
+      <label>Allowed vehicles:</label>
+      <div>
+        <input type="checkbox" id="bi" name="vehicles" value="bicycles">
+        <label for="bi">Bicycles</label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="mc" name="vehicles" value="motorcycles">
+        <label for="mc">Motorcycles</label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="ca" name="vehicles" value="cars">
+        <label for="ca">Cars</label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="pt" name="vehicles" value="pickup trucks">
+        <label for="pt">Pickup trucks</label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="tr" name="vehicles" value="trucks">
+        <label for="tr">Commercial trucks</label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="bo" name="vehicles" value="boats">
+        <label for="bo">Boats</label>
+      </div>
+    -->
+      <div class="alert3">Parking Added</div>
+
+      <button class="btn btn-primary" type="submit" sendMessage()>Register</button>
+
+  </form>
+</div>
+
+  <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
