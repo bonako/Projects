@@ -1,12 +1,12 @@
 // Initialize Firebase(2)
 var config = {
-  apiKey: "AIzaSyDQ62BC1Gcg-tJJgl7rkqxuDO8x7cSP_08",
-  authDomain: "parkingrabbit-bf78a.firebaseapp.com",
-  databaseURL: "https://parkingrabbit-bf78a.firebaseio.com",
-  projectId: "parkingrabbit-bf78a",
-  storageBucket: "parkingrabbit-bf78a.appspot.com",
-  messagingSenderId: "94492827210",
-  appId: "1:94492827210:web:43ef5ed366dac05eb2d0b3"
+  apiKey: "YOUR_KEY",
+  authDomain: "YOUR_DOMAIN",
+  databaseURL: "YOUR_URL",
+  projectId: "YOUR_ID",
+  storageBucket: "YOUR_BUCKET",
+  messagingSenderId: "YOUR_ID",
+  appId: "YOUR_ID"
 };
 firebase.initializeApp(config);
 
