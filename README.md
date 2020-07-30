@@ -14,6 +14,12 @@ Dungeons and Dragons
 
 NewProject
   - Machine learning story maker (in progress)
+  
+FlappyBird
+  - Flappy Bird game clone
+  
+Maze Generator
+  - Random maze generator
 
 Upcoming projects:
   - 3D Unit FPS game
