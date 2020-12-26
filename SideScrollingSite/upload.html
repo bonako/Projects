@@ -1,0 +1,88 @@
+<!-- <link rel="stylesheet" type="text/css" href="css/style.css"/> -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="css/upload.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+<!-- Setting viewport for different screen sizes -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style media="screen">
+</style>
+<!-- external javascript files for navigation toggler icon functionality -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+
+<body>
+  <script>
+    $(document).ready(function(){
+      $("#flip").click(function(){
+        $("#panel").slideToggle("slow");
+      });
+    });
+  </script>
+  
+  <div id="flip">
+    <h1>SideLegends</h1>
+    <div id="panel" class="jumbotron text-center"
+      style="color: white; background:green; margin: auto; border-radius: 0rem; background-image: url(imgs/bg3.gif); background-size: cover; height: 100%">
+      <h1 style="margin-top: 25%;">SideLegends</h1>
+      <p style="margin-bottom: 25%">Mobile side-scrolling game information site.</p>
+    </div>
+  
+  </div>
+  
+<!-- navigation bar code -->
+<nav class="navbar justify-content-between navbar-expand-lg bg-light navbar-light sticky-top">
+    <a class="navbar-brand" href="index.html">SideLegends</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="games.html">Gamelist</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="walkthroughs.html">Walkthroughs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="news.html">News</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="giveaways.html">Giveaways</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="gallery.html">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="music.html">Music</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="upload.html">Upload</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="text-center middle is-large" >
+      <label>Progress bar:</label>
+        <progress class="text-center" value="0" max="100" id="uploader">0%</progress>
+        <br />
+        <input style="background-color: grey;" type="file" value="upload" id="fileButton" />
+        <div id="bar"></div>
+  </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-storage.js"></script>
+
+    <script src="app.js"></script>
+    <!-- <script src="upload.js"></script> -->
+    <script src="download.js"></script>
+</body>

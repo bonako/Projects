@@ -1,0 +1,314 @@
+/*All code is various tutorials mentioned throughout the learning diaries, source code, from W3schools.com and my own*/
+/*site header*/
+/** {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+.header {
+  text-align: center;
+  padding: 10px;
+  background-color: #7FFF00;
+  background: url(../imgs/bg.jpg);
+  background-repeat: repeat;
+
+}*/
+/*top navigation bar*/
+/*.topnav {
+  overflow: hidden;
+  background-color: #333;
+}*/
+/*style the navigation links*/
+/*.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}*/
+/*style on mouse over*/
+/*.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+ul.one {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li.one {
+  float: left;
+}
+
+li.one a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li.one a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+.column {
+  float: left;
+  padding: 10px;
+}*/
+/* Clear floats after the columns */
+/*.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}*/
+/* Left and right column */
+/*.column.side {
+  width: 25%;
+}*/
+/* Middle column */
+/*.column.middle {
+  width: 50%;
+}*/
+/*footer*/
+/*.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}*/
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+/*@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+.button1 {
+  font-size: 16px;
+  background-color: #4CAF50;
+}*/
+/* Green */
+/*.button1:hover {
+  background-color: red;
+}
+p {
+  text-indent: 50px;
+  text-align: left;
+  letter-spacing: 3px;
+  line-height: 1.8;
+  word-spacing: 10px;
+}
+.list {
+  line-height: 1.8;
+  word-spacing: 10px;
+  letter-spacing: 3px;
+  text-align: left;
+}
+/* unvisited link */
+/*a.one:link {
+  background-color: green;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}*/
+
+/* visited link */
+/*a.one:visited {
+  background-color: green;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+*/
+/* mouse over link */
+/*a.one:hover {
+  background-color: blue;
+}
+*/
+/* selected link */
+/*a.one:active {
+  background-color: blue;
+}*/
+/*img {
+  max-width: 100%;
+  padding: 15px;
+  height: auto;
+}*/
+/*#bg {
+  background-image: "imgs/bg.jpg";
+  background-position: right bottom, left top;
+  background-repeat: no-repeat, repeat;
+  padding: 15px;
+}
+#contact {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+#contact td, #contact th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+#contact tr:hover {
+  background-color: #ddd;
+}
+#contact th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: green;
+  color: white;
+}*/
+.gallery {
+  padding-bottom: 15px;
+  max-width: 100%;
+}
+
+.margined {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.bold {
+  text-decoration: bold;
+}
+
+.greenbutton {
+  padding: 3px;
+  background-color: green;
+  color: white;
+}
+
+.alert2 {
+  text-align: center;
+  padding: 10px;
+  background: lightgray;
+  color: green;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: none;
+}
+
+.alert3 {
+  text-align: center;
+  padding: 10px;
+  color: #155724;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  display: none;
+}
+
+.tab-panels ul {
+  margin: 0;
+  padding: 0;
+}
+
+.tab-panels ul li {
+  list-style-type: none;
+  display: inline-block;
+  background:lightgreen;
+  margin: 0;
+  padding: 3px 10px;
+  border-radius: 5px 5px 0 0;
+  color: #fff;
+  font-weight: 200;
+  cursor: pointer;
+}
+
+.tab-panels ul li:hover {
+  color: #fff;
+  background: green;
+  /* border-style: solid; */
+}
+
+.tab-panels ul li.active {
+  color: #fff;
+  background: green;
+  border-style: solid;
+  border-color: green;
+}
+
+.tab-panels .panel {
+  display: none;
+  /* background: #f1eeee; */
+  background: white;
+  border-style: solid;
+  border-color: green;
+  padding: 30px;
+  border-radius: 0 0 10px 10px;
+}
+
+.tab-panels .panel.active {
+  display: block;
+}
+
+.flip {
+  height: 199px;
+  width: 300px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.flip img {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+}
+
+.flip .back {
+  background: white;
+  color: #fff;
+  text-align: center;
+}
+
+#slider {
+  width: 720px;
+  height: 400px;
+  overflow: hidden;
+}
+
+#slider .slides {
+  display: block;
+  width: 6000px;
+  height: 400px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+#slider .slide {
+  float: left;
+  list-style-type: none;
+  width: 720px;
+  height: 400px;
+}
+
+#panel,
+#flip {
+  padding: 5px;
+  text-align: center;
+  border: solid 1px #c3c3c3;
+  cursor: pointer;
+}
+
+#panel {
+  padding: 50px;
+  display: none;
+}
+
+.centered {
+  text-align: center;
+  display: block;
+}

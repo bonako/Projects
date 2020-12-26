@@ -1,0 +1,119 @@
+
+<!-- Stylesheets -->
+
+<!-- <link rel="stylesheet" type="text/css" href="css/style.css"/> -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+<link rel='stylesheet' type='text/css' href="css/style.css" />
+
+<!-- Viewport -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<!-- External scripts for navigation bar -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+<!-- <div id="bg" class="header"><h1><a class="one" href="homepage.html">SideLegends</a></h1></div>
+<div class="topnav">
+  <ul class="one" >
+    <li class="one" ><a href="homepage.html">Home</a></li>
+    <li class="one" ><a href="games.html">Gamelist</a></li>
+    <li class="one" ><a class="active" href="walkthroughs.html">Walkthroughs</a></li>
+    <li class="one" ><a href="news.html">News</a></li>
+  </ul>
+</div><table>
+  <tbody>
+    <tr>
+      <th>Walkthrough</th>
+    </tr>
+    <tr>
+      <td>
+        <h2><a href="walkthrough1.html">Sword of Xolan Act 1 Level 2</a></h2>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p><a href="homepage.html">Homepage</a></p> -->
+<!-- Tutorial followed: https://www.w3schools.com/jquery/jquery_slide.asp -->
+<script>
+	$(document).ready(function(){
+		$("#flip").click(function(){
+			$("#panel").slideToggle("slow");
+		});
+	});
+</script>
+
+<div id="flip">
+	<h1>SideLegends</h1>
+	<div id="panel" class="jumbotron text-center"
+		style="color: white; background:green; margin: auto; border-radius: 0rem; background-image: url(imgs/bg3.gif); background-size: cover; height: 100%">
+		<h1 style="margin-top: 25%;">SideLegends</h1>
+		<p style="margin-bottom: 25%">Mobile side-scrolling game information site.</p>
+	</div>
+
+</div>
+<!-- Navbar code -->
+<nav class="navbar navbar-expand-lg bg-light navbar-light sticky">
+  <a class="navbar-brand" href="sitemap.xml">SideLegends</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="games.html">Gamelist</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="walkthroughs.html">Walkthroughs</a>
+      </li>    
+      <li class="nav-item">
+        <a class="nav-link" href="news.html">News</a>
+      </li>  
+      <li class="nav-item">
+        <a class="nav-link" href="giveaways.html">Giveaways</a>
+      </li> 
+      <li class="nav-item">
+        <a class="nav-link" href="gallery.html">Gallery</a>
+      </li> 
+      <li class="nav-item">
+        <a class="nav-link" href="music.html">Music</a>
+      </li> 
+      <li class="nav-item">
+        <a class="nav-link" href="upload.html">Upload</a>
+      </li> 
+     <li class="nav-item">
+        <a class="nav-link" href="contact.html">Contact</a>
+      </li> 
+    </ul>
+  </div>  
+</nav>
+
+<!-- Create container for webpage -->
+<div class="container" style="margin-top:30px; margin-bottom: 30px">
+  <!-- Create column of width 12 out of 12 -->
+  <div class="col-lg-12">
+    <h2>Walkthroughs</h2>
+    <!-- Search button -->
+    <div class="jumbotron">
+      <h2>Search</h2>
+      <!-- input tag -->
+      <div class="form-group">
+
+        <!-- Triggers search as keys are entered using onkeyup -->
+        <input class="form-control" id="searchBar" onkeyup="search_walkthroughs()" type="text" name="search"
+          placeholder="Search walkthroughs..">
+      </div>
+    </div>
+    <!-- Create a bootstrap listgroup -->
+    <div class="list-group">
+      <a class="walkthrough list-group-item list-group-item-action" href="walkthrough1.html">Sword of Xolan Act 1 Level 2</a>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="search_walkthroughs.js"></script>

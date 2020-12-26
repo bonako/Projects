@@ -1,0 +1,123 @@
+
+
+<!-- Linking external stylesheets for styling the webpage -->
+<!-- <link rel="stylesheet" type="text/css" href="css/style.css"/> -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+ 
+<!-- adjusting viewport for different screensizes -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<!-- Linking external javascripts for navigation bar toggler icon functionality -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+<!-- <div id="bg" class="header"><h1><a class="one" href="homepage.html">SideLegends</a></h1></div>
+<div class="topnav">
+  <ul class="one" >
+    <li class="one" ><a href="homepage.html">Home</a></li>
+    <li class="one" ><a href="games.html">Gamelist</a></li>
+    <li class="one" ><a class="active" href="walkthroughs.html">Walkthroughs</a></li>
+    <li class="one" ><a href="news.html">News</a></li>
+  </ul>
+</div><p><a href="walkthroughs.html">Walkthroughs</a></p>
+<h1>Sword of Xolan Level 1 Act 2</h1>
+<ol>
+  <li>Collect the blue potion on the left.</li>
+  <li>Kill the zombie then drop down and destroy the vase.</li>
+  <li>Save the prisoner.</li>
+  <li>Continue left, kill the hanging spider and the zombie, then continue up.</li>
+  <li>Kill the enemy and the giant, save the prisoner.</li>
+  <li>Head right and up.</li>
+  <li>Escape the enemy's balls of fire by standing on the edge of the grass, then kill the enemy with your balls of fire.</li>
+  <li>Continue right and kill the giant.</li>
+  <li>Save the prisoner in the secret area to the right, then drop down.</li>
+  <li>Kill the hanging spider and the bee with your sword.</li>
+  <li>Jump only after the green slime passes you, then attack with your ball of fire.</li>
+  <li>Continue right, kill the zombie, and complete the level.</li>
+</ol>
+<p><a href="homepage.html">Homepage</a></p> -->
+
+<script>
+  $(document).ready(function(){
+    $("#flip").click(function(){
+      $("#panel").slideToggle("slow");
+    });
+  });
+</script>
+
+<div id="flip">
+  <h1>SideLegends</h1>
+  <div id="panel" class="jumbotron text-center"
+    style="color: white; background:green; margin: auto; border-radius: 0rem; background-image: url(imgs/bg3.gif); background-size: cover; height: 100%">
+    <h1 style="margin-top: 25%;">SideLegends</h1>
+    <p style="margin-bottom: 25%">Mobile side-scrolling game information site.</p>
+  </div>
+
+</div>
+<!-- navigation bar code -->
+<nav class="navbar navbar-expand-lg bg-light navbar-light sticky">
+  <a class="navbar-brand" href="index.html">SideLegends</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="games.html">Gamelist</a>
+      </li>
+      <li class="nav-item">
+        <a style="padding: 10px" class="nav-link active" href="walkthroughs.html">Walkthroughs</a>
+      </li>    
+      <li class="nav-item">
+        <a class="nav-link" href="news.html">News</a>
+      </li> 
+      <li class="nav-item">
+        <a class="nav-link" href="giveaways.html">Giveaways</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="gallery.html">Gallery</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="music.html">Music</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="upload.html">Upload</a>
+      </li>
+     <li class="nav-item">
+        <a class="nav-link" href="contact.html">Contact</a>
+      </li>         
+    </ul>
+  </div>  
+</nav>
+
+
+<!-- Create container for webpage -->
+<div class="container" style="margin-top:30px; margin-bottom: 30px">
+  <!-- Create column of width 12 out of 12 -->
+  <div class="col-lg-12">
+    <!-- List header -->
+    <h2>Sword of Xolan Act 1 Level 2</h2>
+    <!-- Ordered list to display steps -->
+    <ol>
+      <li>Collect the blue potion on the left.</li>
+      <li>Kill the zombie then drop down and destroy the vase.</li>
+      <li>Save the prisoner.</li>
+      <li>Continue left, kill the hanging spider and the zombie, then continue up.</li>
+      <li>Kill the enemy and the giant, save the prisoner.</li>
+      <li>Head right and up.</li>
+      <li>Escape the enemy's balls of fire by standing on the edge of the grass, then kill the enemy with your balls of fire.</li>
+      <li>Continue right and kill the giant.</li>
+      <li>Save the prisoner in the secret area to the right, then drop down.</li>
+      <li>Kill the hanging spider and the bee with your sword.</li>
+      <li>Jump only after the green slime passes you, then attack with your ball of fire.</li>
+      <li>Continue right, kill the zombie, and complete the level.</li>
+    </ol>
+  </div>
+</div>

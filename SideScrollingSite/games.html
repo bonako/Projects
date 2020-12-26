@@ -1,0 +1,164 @@
+<!-- Stylesheets -->
+
+
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+
+<!-- Setting viewport for screensize adjustment -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--Javascript codes -->
+
+
+<!-- Scripts required for navigation bar toggler icon -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+<!-- Javacsript for search bar -->
+<script type="text/javascript" src="search_games.js"></script>
+<script src="security.js" ></script>
+
+
+<!-- custom embedded styling for games class used in search_games function -->
+<!-- don't want to change the game class for all using the stylesheet -->
+<style>
+  .games {
+    display: inline;
+  }
+</style>
+
+<!-- Navigation Bar Code -->
+
+<!-- Tutorial followed: https://www.w3schools.com/jquery/jquery_slide.asp -->
+<script>
+	$(document).ready(function(){
+		$("#flip").click(function(){
+			$("#panel").slideToggle("slow");
+		});
+	});
+</script>
+
+<div id="flip">
+	<h1>SideLegends</h1>
+	<div id="panel" class="jumbotron text-center"
+		style="color: white; background:green; margin: auto; border-radius: 0rem; background-image: url(imgs/bg3.gif); background-size: cover; height: 100%">
+		<h1 style="margin-top: 25%;">SideLegends</h1>
+		<p style="margin-bottom: 25%">Mobile side-scrolling game information site.</p>
+	</div>
+
+</div>
+<nav class="navbar navbar-expand-lg bg-light navbar-light sticky">
+  <a class="navbar-brand" href="index.html">SideLegends</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="games.html">Gamelist</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="walkthroughs.html">Walkthroughs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="news.html">News</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="giveaways.html">Giveaways</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="gallery.html">Gallery</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="music.html">Music</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="upload.html">Upload</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contact.html">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<!--Gamelist-->
+
+
+<div class="container" style="margin-top: 30px">
+  <div class="col-sm-12">
+    <h2>Gamelist</h2>
+
+    <!-- Search button -->
+    <div class="jumbotron">
+      <h2>Search</h2>
+      <!-- input tag -->
+      <div class="form-group">
+
+        <!-- Triggers search as keys are entered using onkeyup -->
+        <input class="form-control" id="searchBar" onkeyup="search_games()" type="text" name="search"
+          placeholder="Search games..">
+      </div>
+    </div>
+    <div class="list-group">
+      <a class="games list-group-item list-group-item-action" href="firstpost.html">Ninja Warrior: Shadow Warrior
+        Legend</a>
+      <a class="games list-group-item list-group-item-action" href="secondpost.html">Sword of Xolan</a>
+      <a class="games list-group-item list-group-item-action" href="thirdpost.html">RPG Platformer - Gothic:
+        ArnaLLiA</a>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="tabs.js"></script>
+
+<!-- Draft Code -->
+
+
+<!-- <div id="bg" class="header"><h1><a class="one" href="homepage.html">SideLegends</a></h1></div>
+<div class="topnav">
+  <ul class="one" >
+    <li class="one" ><a href="homepage.html">Home</a></li>
+    <li class="one" ><a class="active" href="games.html">Gamelist</a></li>
+    <li class="one" ><a href="walkthroughs.html">Walkthroughs</a></li>
+    <li class="one" ><a href="news.html">News</a></li>
+  </ul>
+</div><table>
+  <tbody>
+    <tr>
+      <th>Game</th>
+      <th>Android</th>
+      <th>iOS</th>
+      <th>Category</th>
+      <th>Rating</th>
+    </tr>
+    <tr>
+      <td>
+        <h2><a href="firstpost.html">Ninja Warrior: Shadow Warrior Legend</a></h2>
+      </td>
+      <td>Yes</td>
+      <td>No</td>
+      <td>Stealth</td>
+      <td>4.3</td>
+    </tr>
+    <tr>
+      <td>
+        <h2><a href="secondpost.html">Sword of Xolan</a></h2>
+      </td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Action</td>
+      <td>4.4</td>
+    </tr>
+  </tbody>
+</table>
+<p><a href="homepage.html">Homepage</a></p>

@@ -1,0 +1,135 @@
+/* 
+References:
+
+https://www.geeksforgeeks.org/create-a-music-player-using-javascript/ 
+*/
+
+body {
+  background-color: lightgreen;
+
+  /* Smoothly transition the background color */
+  transition: background-color 0.5s;
+}
+
+.player {
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.trackPic {
+  margin: 25px;
+  height: 250px;
+  width: 250px;
+  background-image: url("https://images.pexels.com/photos/262034/pexels-photo-262034.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+  background-size: cover;
+  border-radius: 15%;
+}
+
+.nowPlaying {
+  font-size: 1rem;
+}
+
+.trackTitle {
+  font-size: 3rem;
+}
+
+.trackArtist {
+  font-size: 1.5rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.playPauseButton,
+.prevSong,
+.nextSong {
+  padding: 25px;
+  opacity: 0.8;
+
+  /* Smoothly transition the opacity */
+  transition: opacity 0.2s;
+}
+
+.playPauseButton:hover,
+.prevSong:hover,
+.nextSong:hover {
+  opacity: 1;
+}
+
+.sliderControl {
+  width: 75%;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modify the appearance of the slider */
+.seekControl,
+.volumeControl {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 5px;
+  background: black;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+/* Modify the appearance of the slider thumb */
+.seekControl::-webkit-slider-thumb,
+.volumeControl::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: white;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.seekControl:hover,
+.volumeControl:hover {
+  opacity: 1;
+}
+
+.seekControl {
+  width: 60%;
+}
+
+.volumeControl {
+  width: 30%;
+}
+
+.currentTime,
+.trackLength {
+  padding: 10px;
+}
+
+i.fa-volume-down,
+i.fa-volume-up {
+  padding: 10px;
+}
+
+i.fa-play-circle,
+i.fa-pause-circle,
+i.fa-step-forward,
+i.fa-step-backward {
+  cursor: pointer;
+}
