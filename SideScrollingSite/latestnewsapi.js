@@ -3,7 +3,7 @@ const newsdetails = document.getElementById('news-text')
 const newsurl = document.getElementById('link')
 const newsimg = document.getElementById('news-img')
 
-const url = "https://gnews.io/api/v3/search?q=platformer&token=3f5a979df835d6b217c3eee2f58d08a6";
+const url = "https://gnews.io/api/v3/search?q=platformer&token=key";
 
 async function getNews() {
 
