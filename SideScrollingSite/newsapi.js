@@ -8,7 +8,7 @@ const loadingElement = document.querySelector('.loading');
 loadingElement.style.display = 'none';
 
 const url =
-  "https://gnews.io/api/v3/search?q=platformer&token=3f5a979df835d6b217c3eee2f58d08a6";
+  "https://gnews.io/api/v3/search?q=platformer&token=key";
 
 async function getNews() {
   loadingElement.style.display = '';
