@@ -20,6 +20,14 @@ FlappyBird
   
 Maze Generator
   - Random maze generator
+  
+Side Scrolling Site
+  - mobile game information site
+  - demo student.athabascau.ca/~rafehhu
+  
+Storyboard
+  - Social media site
+  - demo: storyboard-project.herokuapp.com
 
 Upcoming projects:
   - 3D Unit FPS game
