@@ -135,6 +135,7 @@ points1 = []
 points2 = []
 points3 = []
 points4 = []
+
 for poi in shortestpois:
     for tag in poi:
         if tag == "POI1":
@@ -192,83 +193,11 @@ for i in range(len(points1)):
   skk.up()
   skk.home()
   skk.down()
-  skk.left(90)
+  skk.left(angle1)
   if points1[i] != 26:
     skk.forward(points1[i]*10)
  
 turtle.done()
-
-# skk2 = turtle.Turtle()
-
-# skk2.speed(1000)
-# skk2.up()
-# skk2.right(90)
-# skk2.forward(260) 
-# skk2.left(90)
-# skk2.down()
-# skk2.circle(260)
-# skk2.up()
-# skk2.left(180)
-# skk2.forward(260) 
-
-# angle2 = 360/len(points2)
-# for i in range(len(points2)): 
-#   skk2.up()
-#   skk2.home()
-#   skk2.down()
-#   skk2.left(i+angle2)
-#   if points2[i] != 26:
-#     skk2.forward(points2[i]*10)
- 
-# turtle.done()
-
-# skk3 = turtle.Turtle()
-
-# skk3.speed(1000)
-# skk3.up()
-# skk3.right(90)
-# skk3.forward(260) 
-# skk3.left(90)
-# skk3.down()
-# skk3.circle(260)
-# skk3.up()
-# skk3.left(180)
-# skk3.forward(260) 
-
-# angle3 = 360/len(points3)
-# for i in range(len(points3)): 
-#   skk3.up()
-#   skk3.home()
-#   skk3.down()
-#   skk3.left(i+angle3)
-#   if points3[i] != 26:
-#     skk3.forward(points3[i]*10)
- 
-# turtle.done()
-
-# skk4 = turtle.Turtle()
-
-# skk4.speed(1000)
-# skk4.up()
-# skk4.right(90)
-# skk4.forward(260) 
-# skk4.left(90)
-# skk4.down()
-# skk4.circle(260)
-# skk4.up()
-# skk4.left(180)
-# skk4.forward(260) 
-
-# angle4 = 360/len(points4)
-# for i in range(len(points4)): 
-#   skk4.up()
-#   skk4.home()
-#   skk4.down()
-#   skk4.left(i+angle4)
-#   if points4[i] != 26:
-#     skk4.forward(points4[i]*10)
- 
-# turtle.done()
 
 max1 = -1
 for i in range(len(points1)):
@@ -335,9 +264,4 @@ for i in range(-10,10):
       else:
             print(" "),   
 print("POI4")                                          
-# for point in points1:
-       
-# for point in points2: 
-# for point in points3: 
-# for point in points4: 
 
