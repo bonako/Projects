@@ -1,0 +1,50 @@
+dictionary = {	"u-v":2,
+		"v-u":2,
+		"u-w":5,
+		"w-u":5,
+		"u-x":1,
+		"x-u":1,
+		"v-x":2,
+		"x-v":2,
+		"v-w":3,
+		"w-v":3,
+		"w-x":3,
+		"x-w":3,
+		"w-y":1,
+		"y-w":1,
+		"w-z":5,
+		"z-w":5,
+		"x-y":1,
+		"y-x":1,
+		"y-z":2	
+		"z-y":2 }
+
+distances = { 	"u":0,
+		"v":0,
+		"w":0,
+		"x":0,
+		"y":0,
+		"z":0 }
+
+N' = {"u"}
+nodes = {"u","v","w","x","y","z"}
+for node in nodes:
+	if node+"-u" in dictionary:
+		distances[node] = dictionary["u-"+node]
+	else
+		distances[node] = MAX_VALUE;
+
+
+while N' != nodes
+	for node in nodes:
+		if !(N'.has(node))
+			if (distance[node] < max)
+				min = distance[node]
+				minnode = node;			
+				max = min;
+	N'.append(minnode)
+	
+	for node in nodes:
+		if !(N'.has(node))
+			if (node+"-"+minnode in dictionary):
+				distances[node] = min(distances[node], distances[minnode] + dictionary[node+"-"+minnode]);

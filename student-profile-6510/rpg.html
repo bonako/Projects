@@ -1,0 +1,118 @@
+<table>
+    <tr>
+        <td>
+            <table>
+                <tr>
+                    <td>
+                        <div id="display" style="width: 400px; height: 400px; background-color: black; color: white;"></div>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="inp" onchange="checkInput()" style="width: 400px; height: 50px" type="text" autofocus/>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td>
+            <table>
+                <tr>
+                    <td>
+                        <img id="minimap" style="width: 200px; height: 100px; background-color: blue; color: white;" src="minimap.png" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="inv" style="width: 200px; height: 350px; background-color: brown; color: white;"></div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+
+
+
+<script>
+    var pulledLever = false;
+    var trickObject = false;
+    var weaponsAndArmour = false;
+    var inBedroom = false;
+    var triggerPulled = false;
+    var haveKey = false;
+
+    var inv = ["Some weapons and/or armour"]
+
+    if (weaponsAndArmour) {
+        document.getElementById('inv').innerHTML += inv[0] + '<br/>'
+    }
+
+    document.getElementById('display').innerHTML = "Welcome to R's Adventure. Type commands exactly as you see them." + '<br/><br/>'
+
+    document.getElementById('display').innerHTML += "You enter into a Water Lair and you hear hissing noises but you don’t know what’s making them. You examine the air and it feels cold but the environment is clear so you can still see around you. The temple smells like ozone so you reckon that there must be some chemical reactions between oxides of nitrogen (NOx) and volatile organic compounds (VOC) here." +'<br/><br/>'
+
+    document.getElementById('display').innerHTML += "Type next to continue..." + '<br/><br/>'
+
+    checkInput = () => {    
+        if (document.getElementById('inp').value == "next") {
+            document.getElementById('display').innerHTML += "The room you’re standing in looks like a toruture chamber. You see some dung and rubble on the floor and look up to see that the ceiling is partially collapsed. You see a lever right in front of you and a wide passageway south of you." + '<br/><br/>'
+            document.getElementById('display').innerHTML += "You can either pull the lever or go south." + '<br/><br/>'
+        } else if (document.getElementById('inp').value == "pull the lever") {
+            pulledLever = true;
+            document.getElementById('display').innerHTML += "You pull the lever and hear the sound of rising water." + '<br/><br/>'
+        } else if (document.getElementById('inp').value == "go south") {
+            document.getElementById('display').innerHTML += "You walk through a wide passageway and enter into an armoury which is stocked with weapons and armor. You see that the furniture is wrecked but it is still present. You notice some runes engraved on the wall along with some rubble and dirt on the floor. Looking west you see a passage dips down into a pool of water, then becomes a vertical cliff with a passage far above.." + '<br/><br/>'
+            document.getElementById('display').innerHTML += "You can either equip some weapons and armour, examine the engravings, go west or head back to the torture chamber" + '<br/><br/>'
+        } else if (document.getElementById('inp').value == "equip some weapons and armour") {
+            weaponsAndArmour = true;
+            if (trickObject) {
+                document.getElementById('display').innerHTML += "You cannot carry much weight as you have lost your strength. All you are able to wield a lightweight sword." + '<br/><br/>'
+            } else {
+                document.getElementById('display').innerHTML += "You equip some weapons and armour." + '<br/><br/>'
+            }
+        } else if (document.getElementById('inp').value == "examine the engravings") {
+            trickObject = true;
+            if (weaponsAndArmour) {
+                document.getElementById('display').innerHTML += "You examine the engravings but upon touching them you feel you have aged alot and thus your strength has decreased. You must let go of some weight you are carrying. Thus, you drop your armour." + '<br/><br/>'
+            } else {
+                document.getElementById('display').innerHTML += "You examine the engravings but upon touching them you feel you have aged alot and thus your strength has decreased." + '<br/><br/>'
+            }
+        } else if (document.getElementById('inp').value == "go west") {
+            inBedroom = true;
+            document.getElementById('display').innerHTML += "You swim across the pool of water. Type next to continue..." + '<br/><br/>'
+        } else if (document.getElementById('inp').value == "next" && inBedroom == true) {
+            document.getElementById('display').innerHTML += "After successfully crossing the passage you enter into a bedroom, for use by leaders you think. You see that the furniture is wrecked but it is still present, just like in the armory. You also notice a treasure chest and some small stones on the floor. To the north is a door but it is across a pool of water." + '<br/><br/>'
+            document.getElementById('display').innerHTML += "You can take a nap, open the chest, or swim across the pool." + '<br/><br/>'
+        } else if (document.getElementById('inp').value == "take a nap") {
+            document.getElementById('display').innerHTML += "After taking a brief nap you remember you are in a dungeon which could be filled with traps. You reconsider swimming across the water." + '<br/><br/>'
+        } else if (document.getElementById('inp').value == "open the chest") {
+            document.getElementById('display').innerHTML += "You open the chest and are surprised to find a trigger. You can pull the trigger but you don't know what it will do." + '<br/><br/>'
+        } else if (document.getElementById('inp').value == "pull the trigger") {
+            triggerPulled = true;
+            document.getElementById('display').innerHTML += "You pull the trigger and hear some noises in the water then after a short while they go away." + '<br/><br/>'
+        } else if (document.getElementById('inp').value == "swim across the pool") {
+            document.getElementById('display').innerHTML += "You try to swim across the pool but encounter pirhanas in the water." + '<br/><br/>'
+            document.getElementById('display').innerHTML += "Alas, you succumb to your wounds and die. Your adventure ends here. Thanks for playing!" + '<br/><br/>'
+            document.getElementById('inp').style.display = 'none'
+        } else if (document.getElementById('inp').value == "swim across the pool" && triggerPulled) {
+            document.getElementById('display').innerHTML += "You successfully swim across the water and make your way to the door which you find to be unlocked." + '<br/><br/>'
+            document.getElementById('display').innerHTML += "You open the door and enter into what looks like a workshop for the construction of weapons, armor, tools, and other goods. You see there's rubble on the floor and then look up to see that the ceiling is partially collapsed." + '<br/><br/>'
+            document.getElementById('display').innerHTML += "You suddenly encounter a zombie. You attack and kill it. Theres a door north of you. You can search the creature or open the door." + '<br/><br/>'
+        } else if (document.getElementById('inp').value == "search the creature" && haveKey) {
+            document.getElementById('display').innerHTML += "You successfully swim across the water and make your way to the door which you find to be unlocked." + '<br/><br/>'
+            document.getElementById('display').innerHTML += "You open the door and enter into what looks like a workshop for the construction of weapons, armor, tools, and other goods. You see there's rubble on the floor and then look up to see that the ceiling is partially collapsed." + '<br/><br/>'
+            document.getElementById('display').innerHTML += "You suddenly encounter a zombie. You attack and kill it. Theres a door north of you. You can search the creature or open the door." + '<br/><br/>'
+        } else if (document.getElementById('inp').value == "open the door" && haveKey) {
+            document.getElementById('display').innerHTML += "You successfully swim across the water and make your way to the door which you find to be unlocked." + '<br/><br/>'
+            document.getElementById('display').innerHTML += "You open the door and enter into what looks like a workshop for the construction of weapons, armor, tools, and other goods. You see there's rubble on the floor and then look up to see that the ceiling is partially collapsed." + '<br/><br/>'
+            document.getElementById('display').innerHTML += "You suddenly encounter a zombie. You attack and kill it. Theres a door north of you. You can search the creature or open the door." + '<br/><br/>'
+        } else {
+            document.getElementById('display').innerHTML += "That's not a command I recognize." + '<br/><br/>'
+        }
+        document.getElementById('inp').value = "";
+
+    }
+
+</script>

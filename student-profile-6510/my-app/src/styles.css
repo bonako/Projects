@@ -1,0 +1,35 @@
+.App {
+  font-family: Raleway;
+  text-align: center;
+  line-height: 1.4;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+}
+
+.stu {
+  text-align: left;
+}
+
+button {
+  font-size: 1em;
+  float:  right;
+}
+
+td {
+  padding: 10px;
+}
+
+tr {
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  font-size: 1em;
+}
+
+img {
+  border-radius: 50%;
+  width: 156px;
+  height: auto;
+}
