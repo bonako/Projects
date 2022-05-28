@@ -207,4 +207,8 @@ public class java1 {
 
         return num == 1;
     }
+    
+    public static int return0() {
+        return 0;
+    }
 }
