@@ -1,13 +1,18 @@
-#import
+# import random module
 import random
 
-#functions
+# create a function to select a random starting area
+# set up inventory, basic environment variables
 def GenerateRandomScene():
-    scenes = ['Riverside','Top of the Mountain','Middle of Forest','Mountain Side']#desert excluded
+    # array
+    scenes = ['Riverside', 'Top of the Mountain', 'Middle of Forest', 'Mountain Side']
+    # boolean array
     water = [True,False]
-    startitems = ['Match','Match','Match','Match','Match','Pocket Knive','Jacket','Full Bottle of Clean Water','Full Bottle of Clean Water','Energy Bar','Banadges','Walking Stick','Journal','Match','Tea Leaves','Cooking Set']
-    randomstarting1 = ['Magnesium Fire Starter', 'Warming Pack', 'Sleeping Bag', 'Axe', 'Torch']
-    randomstarting2 = ['Batteries', 'Bucket', 'Vaseline', 'Hygiene Kit', 'String', 'Camp Set']
+
+    # inventory
+    startitems = ['Match','Match','Match','Match','Match','Pocket Knife','Jacket','Full Bottle of Clean Water','Full Bottle of Clean Water','Energy Bar','Bandages','Walking Stick','Journal','Match','Tea Leaves','Cooking Set']
+    randomstarting1 = ['mAGNESIUM fIRE Starter','Warming Pack', 'Sleeping Bag','Axe','Torch']
+    randomstarting2 = ['Batteries','Bucket','Vaseline','Hygiene Kit','String','Camp Set']
     sceneforplayer = random.choice(scenes)
     if sceneforplayer == 'Riverside':
         water = True
@@ -17,10 +22,13 @@ def GenerateRandomScene():
         water = random.choice(water)
     startitems.append(random.choice(randomstarting1))
     startitems.append(random.choice(randomstarting2))
+
+    # return nested array of starting values
     return [[random.randint(50,100),sceneforplayer,water],startitems]
 
-
+# random explore function
 def GenerateRandomExplore(scene):
+    # exploration items available in the environment
     itemscanbeobtained = ['Berries', 'Mushrooms', 'Tree Bark', 'Plant Fibre', 'Dead Grass', 'Dead Hare', 'Bones','Water Puddle']
     retlist = []
     if scene == 'Riverside':
@@ -58,7 +66,6 @@ def GenerateRandomExplore(scene):
         for i in range(random.randint(0, 3)):
             retlist.append(random.choice(itemscanbeobtained))
         return retlist
-
 
 def GetWood(inventory):
     if 'Axe' in inventory:
@@ -113,50 +120,50 @@ def Menu(hydration,heat,hour,watersource,dndeterminer,dist,hunger):
         elif dndeterminer == 1:
             dndeterminer = 0
     if dndeterminer == 1:
-        print "There are "+str(12-hour)+" hours of night time left"
+        print("There are "+str(12-hour)+" hours of night time left")
     else:
-        print "There are "+str(12-hour)+" hours of day time left"
-    print '1. Chop Trees'
-    print '2. Make Fire'
-    print '3. Discover'
-    print '4. Read The Rule of 3'
-    print '5. Rest'
-    print '6. Hunt'
-    print '7. Walk'
-    print '8. Craft'
-    print '9. View Inventory'
-    print '10. Drink Water'
-    print '11. Eat'
-    print '12. Use Items'
-    print '13. Build Shelter'
+        print("There are "+str(12-hour)+" hours of day time left")
+    print('1. Chop Trees')
+    print ('2. Make Fire')
+    print ('3. Discover')
+    print ('4. Read The Rule of 3')
+    print ('5. Rest')
+    print ('6. Hunt')
+    print ('7. Walk')
+    print ('8. Craft')
+    print ('9. View Inventory')
+    print ('10. Drink Water')
+    print ('11. Eat')
+    print ('12. Use Items')
+    print ('13. Build Shelter')
     if watersource:
-        print "There are Water Sources around You"
-        print '14. Get Water'
-    print 'Hydration: '+str(hydration)
-    print 'Body Heat: '+str(heat)
-    print "Hunger: "+str(hunger)
-    print 'Distance between Civilisation: '+str(dist)+ ' km'
-    print
-    return [raw_input('Action >>> '),hour,dndeterminer]
+        print ("There are Water Sources around You")
+        print ('14. Get Water')
+    print ('Hydration: '+str(hydration))
+    print ('Body Heat: '+str(heat))
+    print ("Hunger: "+str(hunger))
+    print ('Distance between Civilisation: '+str(dist)+ ' km')
+    print()
+    return [input('Action >>> '),hour,dndeterminer]
 
 
 def Ruleof3():
-    print '3 mins without air'
-    print '3 hours without shelter'
-    print '3 days without water'
-    print '3 weeks without food'
-    print '3 months without hope'
+    print ('3 mins without air')
+    print ('3 hours without shelter')
+    print ('3 days without water')
+    print ('3 weeks without food')
+    print ('3 months without hope')
 
 
 def Intro():
-    print "Welcome!"
-    print "This game is all about your survival techinques"
-    print "Always Remember the rule of 3"
+    print ("Welcome!")
+    print ("This game is all about your survival techinques")
+    print ("Always Remember the rule of 3")
     Ruleof3()
     scene = GenerateRandomScene()
-    print "Your charactor is trapped in a "+scene[0][1]
-    print "The distance to civilisation is "+str(scene[0][0])+" km"
-    print "Your aim is to help your charactor survive"
+    print ("Your charactor is trapped in a "+scene[0][1])
+    print ("The distance to civilisation is "+str(scene[0][0])+" km")
+    print ("Your aim is to help your charactor survive")
     DisplayInventoryTry2(scene[1])
     return scene
 
@@ -187,9 +194,9 @@ def DisplayInventoryTry2(inventory):
             for x in amtcount:
                 if inventory[i] == x[0]:
                     x[1]+=1
-    print "You have: "
+    print ("You have: ")
     for i in amtcount:
-        print str(i[1])+" x "+str(i[0])
+        print(str(i[1])+" x "+str(i[0]))
 
 
 def DrinkWater(inventory):
@@ -209,12 +216,12 @@ def DrinkWater(inventory):
             water.append(i)
     if water[0][0] == "Full Bottle of Dirty Water":
         water[0],water[1] = water[1],water[0]
-    print "You have: "
+    print("You have: ")
     if len(water) != 0:
         for i in range(len(water)):
-            print str(i+1)+". " + str(water[i][1])+" x "+str(water[i][0])
-        print "Which water would you want to drink? "
-        waters = raw_input(">>> ")
+            print(str(i+1)+". " + str(water[i][1])+" x "+str(water[i][0]))
+        print ("Which water would you want to drink? ")
+        waters = input(">>> ")
         if waters == '1':
             if water[0][1] - 1 >= 0:
                 inventory.remove('Full Bottle of Clean Water')
@@ -227,12 +234,12 @@ def DrinkWater(inventory):
                     if random.randint(1,10)  < random.randint(1,10):
                         return [30,inventory]
                     else:
-                        print "The water is contaminated. Hydration - 30!"
+                        print ("The water is contaminated. Hydration - 30!")
                         return [-30,inventory]
         else:
-            print "Invalid Choice, No Such Choice Exists"
+            print ("Invalid Choice, No Such Choice Exists")
     else:
-        print "You have no water supplies"
+        print ("You have no water supplies")
 
 
 def CheckValidBody(hydration):
@@ -282,11 +289,11 @@ def ReplaceItem(item,changeto, inventory):
 def MakeFire(inventory):
     inventoryx = FireLightingMethod(inventory)
     if inventoryx == inventory:
-        print "You cannot light fire as you do not have enough tinder"
+        print ("You cannot light fire as you do not have enough tinder")
         return [0,inventory]
     else:
-        print 'Fire Lighted!'
-        print 'Body Heat + 30!'
+        print ('Fire Lighted!')
+        print ('Body Heat + 30!')
         return [30,inventoryx]
 
 
@@ -313,18 +320,18 @@ def SearchFood(inventory):
         if i in food:
             ownedfood.append(i)
     if len(ownedfood) == 0:
-        print "You do not have any food"
+        print ("You do not have any food")
     else:
         DisplayInventoryTry2(ownedfood)
-        print "What do you want to eat?"
-        consume = raw_input(">>> ").lower()
+        print ("What do you want to eat?")
+        consume = input(">>> ").lower()
         for i in ownedfood:
             if consume == i:
                 owned = True
             else:
                 owned = False
         if not owned:
-            print "You do not have this food"
+            print("You do not have this food")
         else:
             inventory.remove(consume)
             if consume == 'rabbit flesh':
@@ -336,21 +343,21 @@ def SearchFood(inventory):
 
 
 def CraftingList():
-    print ">>> Crafting List <<<"
-    print "1. Tinder: 1 x Wood > 3 x Tinder"
-    print "2. String: 1 x Plant Fibre > 1 x String"
-    print "3. String: 1 x Dead Grass > 1 x String"
-    print "4. String: 1 x Cloth > 2 x String"
-    print "5. Cloth: 1 x Clothes > 3 x Cloth ***Tearing Clothes will increase the rate of heat loss!"
-    print "6. Bow Drill: 1 x String, 2 x Wood > 1 x Bow Drill"
-    print "7. Bone Knive: 1 x Bone, 1 x String > 1 x Bone Knive"
-    print "8. Bandage: 1 x Cloth > 3 x Bandage"
-    print "9. Fire Torch: 1 x Wood, 1 x String, 1 x Vaseline, 1 x Tree Bark > 1 x Fire Torch"
-    print "10. Fishing Rod: 1 x Wood, 1 x String, 1 x Knive > 1 x Fishing Rod"
-    print "11. Water Bottle: 1 x Rabbit Skin > 1 x Water Bottle"
-    print "Which one do you want to craft?"
-    print
-    return raw_input(">>> ")
+    print (">>> Crafting List <<<")
+    print ("1. Tinder: 1 x Wood > 3 x Tinder")
+    print ("2. String: 1 x Plant Fibre > 1 x String")
+    print ("3. String: 1 x Dead Grass > 1 x String")
+    print ("4. String: 1 x Cloth > 2 x String")
+    print ("5. Cloth: 1 x Clothes > 3 x Cloth ***Tearing Clothes will increase the rate of heat loss!")
+    print ("6. Bow Drill: 1 x String, 2 x Wood > 1 x Bow Drill")
+    print ("7. Bone Knive: 1 x Bone, 1 x String > 1 x Bone Knive")
+    print ("8. Bandage: 1 x Cloth > 3 x Bandage")
+    print ("9. Fire Torch: 1 x Wood, 1 x String, 1 x Vaseline, 1 x Tree Bark > 1 x Fire Torch")
+    print ("10. Fishing Rod: 1 x Wood, 1 x String, 1 x Knive > 1 x Fishing Rod")
+    print ("11. Water Bottle: 1 x Rabbit Skin > 1 x Water Bottle")
+    print ("Which one do you want to craft?")
+    print()
+    return input(">>> ")
 
 
 def CraftItem(inventory,required_materials,crafted):
@@ -368,9 +375,9 @@ def CraftItem(inventory,required_materials,crafted):
     for i in amtcount:
         consumestr = consumestr + str(i[1])+" x "+str(i[0]) + " "
     craftedstr = str(crafted[1])+" x "+str(crafted[0])
-    print "Crafting "+str(craftedstr)+" will consume "+str(consumestr)
-    print "Are you sure?"
-    confirmation = raw_input("Y / N >>> ")
+    print ("Crafting "+str(craftedstr)+" will consume "+str(consumestr))
+    print ("Are you sure?")
+    confirmation = input("Y / N >>> ")
     if confirmation.lower() == "y":
         try:
             for i in required_materials:
@@ -379,7 +386,7 @@ def CraftItem(inventory,required_materials,crafted):
                 inventory.append(crafted[0])
             return inventory
         except:
-            print "You are missing some indgredients"
+            print ("You are missing some indgredients")
             return inventory
 
 
@@ -389,17 +396,17 @@ def FireLightingMethod(inventory):
     for i in inventory:
         if i in lightingitems:
             ownedlighting.append(i)
-    print "You have these lighting items:"
+    print ("You have these lighting items:")
     DisplayInventoryTry2(ownedlighting)
-    print "Which one do you want to use to light?"
-    tolight = raw_input(">>> ").lower()
+    print ("Which one do you want to use to light?")
+    tolight = input(">>> ").lower()
     found = False
     for i in ownedlighting:
         if tolight == i.lower():
             removeitem = i
             found = True
     if not found:
-        print "You cannot light fire as you do not have the item"
+        print ("You cannot light fire as you do not have the item")
     for i in inventory:
         if i == 'Tinder':
             if tolight == 'match':
@@ -417,40 +424,40 @@ def UseableItemsOutput(inventory):
         if i in useableitems:
             useableowned.append(i)
     if len(useableowned) != 0:
-        print 'You own these useable items:'
+        print ('You own these useable items:')
         DisplayInventoryTry2(useableowned)
-        print ">>> Which one do you want to use? <<<"
-        use = raw_input("Please type in the full item name >>> ").lower()
+        print (">>> Which one do you want to use? <<<")
+        use = input("Please type in the full item name >>> ").lower()
         for i in useableowned:
             if use == i.lower():
                 inventory.remove(i)
                 return [inventory,i]
                 break
     else:
-        print 'You do not own any useable items'
+        print('You do not own any useable items')
 
 
 def UsedItem(hydration,heat,hunger,useitem):
     import time
     useableitems = ['Tea Leaves', 'Warming Pack', 'Energy Bar']
     if useitem not in useableitems:
-        print "Error 001, item to use is not in the Useable Items List!"
-        print "Creating Crash Log."
+        print ("Error 001, item to use is not in the Useable Items List!")
+        print ("Creating Crash Log.")
         f = open('CrashLog: Error 001','a+')
         f.writelines(time.asctime())
         f.writelines('Item To Use: '+useitem)
         f.close()
-        raise ValueError,'item to use is not in the Useable Items List!'
+        raise (ValueError,'item to use is not in the Useable Items List!')
     else:
         if useitem == useableitems[0]:
             hydration = 100
-            print "Hydration Restored to 100"
+            print ("Hydration Restored to 100")
         elif useitem == useableitems[1]:
             heat = 100
-            print "Heat Restored to 100"
+            print ("Heat Restored to 100")
         elif useitem == useableitems[2]:
             hunger -= 30
-            print "Hunger - 30"
+            print ("Hunger - 30")
         return [hydration,heat,hunger]
 
 
@@ -485,21 +492,21 @@ while dist > 0:
                 wood = random.randint(0,2)
             for i in range(wood):
                 startingitems.append('Wood')
-            print str(wood) + ' log(s) are obtained'
+            print (str(wood) + ' log(s) are obtained')
             hour += 1
             heat += 10
             heat = CheckValidBody(heat)
             hydration -= 15
             hunger += 5
             hydration = CheckValidBody(hydration)
-            print "You used 1 hour to collect some logs"
+            print ("You used 1 hour to collect some logs")
         elif action == '2':
             fire = MakeFire(startingitems)
             startingitems = fire[1]
             heat += fire[0]
             try:
                 startingitems = ReplaceItem('Full Bottle of Dirty Water','Full Bottle of Clean Water', startingitems)
-                print "Water Purified!"
+                print ("Water Purified!")
             except:
                 pass
         elif action == '3':
@@ -513,22 +520,22 @@ while dist > 0:
                 for i in discover:
                     discover_str = discover_str + i + ' '
                     startingitems.append(i)
-                print discover_str + 'is/are obtained'
+                print (discover_str + 'is/are obtained')
             else:
-                print "Nothing is found"
+                print ("Nothing is found")
             hour += 1
             heat += 10
             heat = CheckValidBody(heat)
             hydration -= 10
             hunger += 10
             hydration = CheckValidBody(hydration)
-            print "You have used 1 hour to explore around you"
+            print ("You have used 1 hour to explore around you")
         elif action == '4':
             # this line is used for minising
             Ruleof3()
         elif action == '5':
             hour += 5
-            print "You have used 5 hours to rest, energy is restored"
+            print ("You have used 5 hours to rest, energy is restored")
             hydration -= 5
             if shelter:
                 pass
@@ -544,21 +551,21 @@ while dist > 0:
             hour += 1
             if captured[1] == 'True' and captured[0] != 'poisonous scorpian':
                 if captured[0]:
-                    print "You saw a "+captured[0]+" and you captured it"
+                    print ("You saw a "+captured[0]+" and you captured it")
                     startingitems.append((captured[0]+' flesh'))
-                    print 'You have used 1 hour to hunt'
+                    print ('You have used 1 hour to hunt')
                     hydration -= 15
                     hydration = CheckValidBody(hydration)
                     heat += 15
                     heat = CheckValidBody(heat)
                 else:
-                    print "You didn't see anything"
+                    print ("You didn't see anything")
             elif captured[1] == 'False':
-                print "You saw a "+captured[0]+" and it escaped... bad luck!"
+                print ("You saw a "+captured[0]+" and it escaped... bad luck!")
             else:
-                print "You saw a "+captured[0]+" and it attacked you, causing a "+captured[1]+" injury!"
+                print ("You saw a "+captured[0]+" and it attacked you, causing a "+captured[1]+" injury!")
                 if captured[1] in ['broken ribs','lethal','neck']:
-                    print "You died"
+                    print ("You died")
                     dist = 0
             hunger += 20
         elif action == '7':
@@ -570,7 +577,7 @@ while dist > 0:
             heat = walked[2]
             heat = CheckValidBody(heat)
             watersource = random.choice([True,False])
-            print "You have used 4 hours to walk "+str(walked[0])+" km"
+            print ("You have used 4 hours to walk "+str(walked[0])+" km")
             hunger += 20
         elif action == '8':
             craft = CraftingList()
@@ -600,7 +607,7 @@ while dist > 0:
             elif craft == "11":
                 startingitems = CraftItem(startingitems, ["Rabbit Skin"], ["Water Bottle", "1"])
             else:
-                print "This is not a valid choice"
+                print ("This is not a valid choice")
         elif action == '9':
             #this line is used for minising
             DisplayInventoryTry2(startingitems)
@@ -613,7 +620,7 @@ while dist > 0:
             except:
                 pass
         elif action == '11':
-            print "Energy Bars are in Use Items Section. It has an amazing buff!"
+            print ("Energy Bars are in Use Items Section. It has an amazing buff!")
             food = SearchFood(startingitems)
             try:
                 startingitems = food[0]
@@ -634,32 +641,32 @@ while dist > 0:
                 hour += 1
             else:
                 hour += 4
-            print "Shelter Built, Rest would not decrease heat."
+            print ("Shelter Built, Rest would not decrease heat.")
         elif action == '14':
             if watersource:
                 emptybottles = SearchItem('Empty Bottle',startingitems)
                 if emptybottles == 0:
-                    print "You do not have empty bottles"
+                    print ("You do not have empty bottles")
                 else:
                     startingitems = ReplaceItem('Empty Bottle',"Full Bottle of Dirty Water",startingitems)
-                    print str(emptybottles)+' x Empty Bottles has been filled up to '+str(emptybottles)+' x Full Bottle of Dirty Water'
+                    print (str(emptybottles)+' x Empty Bottles has been filled up to '+str(emptybottles)+' x Full Bottle of Dirty Water')
                     hunger += 5
             else:
-                print "This is not a valid input"
+                print ("This is not a valid input")
         else:
             # this line is used for minising
-            print "This is not a valid input!"
+            print ("This is not a valid input!")
     else:
         dist = 0
         if hydration <= 0:
-            print "You died of thirst"
-            print "GAME OVER..."
+            print ("You died of thirst")
+            print ("GAME OVER...")
         elif heat <= 0:
-            print "You died of hypothermia"
-            print "GAME OVER..."
+            print ("You died of hypothermia")
+            print ("GAME OVER...")
         elif hunger >= 100:
-            print "You have starved to death"
-            print "GAME OVER..."
+            print ("You have starved to death")
+            print ("GAME OVER...")
 if dist <= 0 and hydration > 0 and heat > 0 and hunger < 100:
-    print "WELL DONE!"
-    print "YOU SURVIVED!!!!!"
+    print ("WELL DONE!")
+    print ("YOU SURVIVED!!!!!")
